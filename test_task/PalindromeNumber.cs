@@ -12,19 +12,18 @@ namespace test_task
         public static void search()
         {
             //main
+            int temp_num = 0;
             Console.Write("Введите число N для последовательности от 0 до ");
-            search_num(int.Parse(Console.ReadLine()));
-        }
-        static int ReverseInt(int num)
-        {
-            int result = 0;
-            while (num > 0)
+            temp_num = int.Parse(Console.ReadLine());
+            if (temp_num <= 100)
+                search_num(temp_num);
+            else
             {
-                result = result * 10 + num % 10;
-                num /= 10;
+                Console.WriteLine("Длина последовательности превышает 100, введите значение меньше 100!");
+                search();
             }
-            return result;
         }
+
         static void search_num(int count)
         {
             int num = 0, dig, rev;
